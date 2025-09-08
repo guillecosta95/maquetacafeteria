@@ -1,0 +1,167 @@
+header img {
+    width: 100px;
+    height: 100px;
+    /* quitamos float para no pelear con flex del header */
+    object-fit: cover;
+}
+
+body {
+    background-color: #a1887f;
+}
+
+li {
+    color: black;
+    font-size: 20px;
+}
+
+.cafeteria {
+    background-color: #8b5e3c !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.navbar {
+    /* Seguís pisando Bootstrap como pediste */
+    background-color: #8b5e3c !important;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2,
+h3 {
+    color: black;
+}
+
+p {
+    color: black;
+    font-size: 20px;
+}
+
+.bienvenida {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px;
+    background-image: url(../img/salado.jpg);
+    background-size: cover;
+
+}
+
+.bienvenida p {
+    color: white;
+}
+
+.bienvenida img {
+    width: 150px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 10px;
+}
+
+h2 {
+    margin: 10px;
+}
+
+.menu article {
+    display: flex;
+    flex-direction: column;
+    border: solid 2px red;
+}
+
+.sobrenosotros {
+    margin: 10px;
+
+}
+
+.sobrenosotros .presentacion {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.presentacion img {
+    width: 200px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.redes img {
+    width: 50px;
+    height: 50px;
+}
+
+.redes {
+    margin: 10px;
+}
+
+footer {
+
+    background-color: black;
+}
+
+footer p {
+    color: white;
+}
+
+/* 1 columna en móvil */
+@media (max-width: 768px) {
+    .menu {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mejor separación del menú expando en móvil */
+.navbar-collapse .navbar-nav {
+    padding: 0.5rem 1rem;
+}
+
+/* Ajustar tamaño del logo en pantallas chicas */
+@media (max-width: 768px) {
+    header.cafeteria img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Agregar overlay semitransparente en sección bienvenida para mejorar legibilidad */
+.bienvenida {
+    position: relative;
+}
+
+.bienvenida::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.bienvenida>div {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ajustar padding entre artículos del menú en móvil */
+@media (max-width: 768px) {
+    .menu {
+        gap: 16px;
+    }
+}
+
+/* Reducir tamaño de iconos de redes en móvil */
+@media (max-width: 576px) {
+    .redes img {
+        width: 40px;
+        height: 40px;
+    }
+}
